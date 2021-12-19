@@ -7,6 +7,7 @@ pipeline {
                     git (
                         branch:  'topic/cliu2/initialize', 
                         url: 'git@github.com:chenliu1993/pipelines-auto.git',
+                        credentialsId: 'prikey',
                         changelog: true
                     )
                 }
