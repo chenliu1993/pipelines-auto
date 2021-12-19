@@ -3,8 +3,14 @@ pipeline {
     stages {
         stage("Source Checkout"){
             steps {
-                git branch:  'topic/cliu2/initialize', url: 'https://github.com/chenliu1993/pipelines-auto.git'
-                sh(script: "go build main.go -o main", returnStatus: true)
+                dir(path: "./helloworld") {
+                    git (
+                        branch:  'topic/cliu2/initialize', 
+                        url: 'git@github.com:chenliu1993/pipelines-auto.git',
+                        changelog: true
+                    )
+                }
+                sh(script: "cd ./helloworld; ls -la;", returnStatus: true)
             }
             
         }
