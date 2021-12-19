@@ -2,7 +2,11 @@ pipeline {
     agent any
     stages {
         stage("Source Checkout"){
-            git branch:  'topic/cliu2/initialize', url: 'https://gitlab.eng.vmware.com/cliu2/lcm-auto-pipelines.git'
+            steps {
+                git branch:  'topic/cliu2/initialize', url: 'https://github.com/chenliu1993/pipelines-auto.git'
+                sh(script: "go build main.go -o main", returnStatus: true)
+            }
+            
         }
     }
 
