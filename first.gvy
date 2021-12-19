@@ -7,7 +7,6 @@ pipeline {
                     git (
                         branch:  'topic/cliu2/initialize', 
                         url: 'https://github.com/chenliu1993/pipelines-auto.git',
-                        credentialsId: 'chenliu1993',
                         changelog: true
                     )
                 }
