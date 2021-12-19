@@ -6,8 +6,8 @@ pipeline {
                 dir(path: "./helloworld") {
                     git (
                         branch:  'topic/cliu2/initialize', 
-                        url: 'git@github.com:chenliu1993/pipelines-auto.git',
-                        credentialsId: 'prikey',
+                        url: 'https://github.com/chenliu1993/pipelines-auto.git',
+                        credentialsId: 'chenliu1993',
                         changelog: true
                     )
                 }
